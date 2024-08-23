@@ -1,0 +1,8 @@
+{
+    "explorer.compactFolders": false,
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "system_error": "cpp",
+        "xlocale": "cpp"
+    }
+}
