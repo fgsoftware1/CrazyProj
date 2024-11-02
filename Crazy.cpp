@@ -1,7 +1,10 @@
 #include "pch.hpp"
 #include "Crazy.hpp"
 
-CTOR_IMPL(Crazy)
+DTOR_IMPL(Crazy)
+DTOR_END
+
+CTOR_IMPL_NO_PARAMS(Crazy)
 CTOR_END
 
 FUNC_IMPL(Crazy, int, add, int a, int b)

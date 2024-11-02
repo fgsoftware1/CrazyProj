@@ -22,63 +22,92 @@ constexpr Ref<T> createRef(Args &&...args)
     return std::make_shared<T>(std::forward<Args>(args)...);;
 }
 
+//!PTRs 
+#define MAKE_SCOPE(className, ...) createScope<className>(__VA_ARGS__)
+#define MAKE_REF(className, ...) createRef<className>(__VA_ARGS__)
+
+//!NAMESPACES
 #define NAMESPACE(name) namespace name {
 #define END_NAMESPACE }
 
+//!PROPERTIES
 #define PROPERTY(type, name) \
     protected: \
         type m_##name; \
     public: \
         const type& get_##name() const { return m_##name; } \
-        void set_##name(const type& value) { m_##name = value; }
+        void set_##name(const type& value) { m_##name = value; } \
 
 #define READONLY_PROPERTY(type, name) \
     protected: \
         type m_##name; \
     public: \
-        const type get_##name() const { return m_##name; }
+        const type get_##name() const { return m_##name; } \
 
 #define CONST_PROPERTY(type, name, value) \
     protected: \
         const type m_##name = value; \
     public: \
-        const type& get_##name() const { return m_##name; }
+        const type& get_##name() const { return m_##name; } \
 
 #define STATIC_PROPERTY(type, name) \
     protected: \
         static type m_##name; \
     public: \
         static const type& get_##name() { return m_##name; } \
-        static void set_##name(const type& value) { m_##name = value; }
+        static void set_##name(const type& value) { m_##name = value; } \
 
-#define CTOR(name, ...) \
-    name(__VA_ARGS__);
 
-#define DTOR(name)  \
-    ~name() = default;
-
+//!METHODS
 #define FUNC(type, name, ...) \
     type name(__VA_ARGS__);
+
+#define FUNC_CONST(type, name, ...) \
+    type name(__VA_ARGS__) const;
+
+#define FUNC_VIRTUAL(type, name, ...) \
+    virtual type name(__VA_ARGS__) = 0;
+
+#define FUNC_CONST_VIRTUAL(type, name, ...) \
+    virtual type name(__VA_ARGS__) const = 0;
 
 #define FUNC_OVERRIDE(type, name, ...) \
     type name(__VA_ARGS__) override;
 
+#define FUNC_CONST_OVERRIDE(type, name, ...) \
+    type name(__VA_ARGS__) const override;
+
 #define FUNC_OVERLOAD(type, name, ...) \
     FUNC(type, name, __VA_ARGS__)
-
-#define CTOR_IMPL(klass, ...) \
-    klass::klass(__VA_ARGS__) {
-#define CTOR_END }
-
-#define DTOR_IMPL(klass) \
-    ~klass::klass() {
-#define DTOR_END }
 
 #define FUNC_IMPL(klass, type, name, ...) \
     type klass::name(__VA_ARGS__) { \
 
+#define FUNC_IMPL_CONST(klass, type, name, ...) \
+    type klass::name(__VA_ARGS__) const { \
+
 #define FUNC_END }
 
+//!CONSTRUCTORS
+#define CTOR(name, ...) \
+    name(__VA_ARGS__);
+
+#define DTOR(name)  \
+    ~name();
+
+#define CTOR_IMPL_WITH_PARAMS(klass, ...) \
+    klass::klass() : __VA_ARGS__ { \
+
+#define CTOR_IMPL_NO_PARAMS(klass) \
+    klass::klass() { \
+
+#define CTOR_END }
+
+#define DTOR_IMPL(klass) \
+    klass::~klass() {
+#define DTOR_END }
+
+//!CLASSES
 #define CLASS(className, ...) \
     class className { \
     public: \
@@ -97,6 +126,7 @@ constexpr Ref<T> createRef(Args &&...args)
 #define DERIVED_CLASS(className, baseClassName, ...) \
     class className : public baseClassName { \
     public: \
-        className(__VA_ARGS__); \
+        CTOR(className, __VA_ARGS__) \
+        DTOR(className)
         
 #define END_DERIVED_CLASS };
