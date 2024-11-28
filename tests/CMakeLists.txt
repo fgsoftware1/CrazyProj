@@ -3,6 +3,10 @@ project(CrazyTests LANGUAGES CXX)
 
 find_package(glad CONFIG REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
+find_package(imgui CONFIG REQUIRED)
+find_package(DevIL)
+find_package(Freetype REQUIRED)
+find_package(glm CONFIG REQUIRED)
 
 file(GLOB_RECURSE CAR_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/car/*.cpp)
 file(GLOB_RECURSE WINDOW_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/window/*.cpp)
@@ -13,5 +17,7 @@ target_include_directories(CarTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/car)
 
 add_executable(WindowTests ${WINDOW_SOURCES})
 target_precompile_headers(WindowTests REUSE_FROM Crazy)
-target_include_directories(WindowTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/window)
-target_link_libraries(WindowTests PRIVATE glad::glad glfw)
+target_include_directories(WindowTests PRIVATE 
+    ${CMAKE_CURRENT_SOURCE_DIR}/window
+)
+target_link_libraries(WindowTests PRIVATE glad::glad glfw imgui::imgui DevIL::IL DevIL::ILU DevIL::ILUT Freetype::Freetype glm::glm-header-only)

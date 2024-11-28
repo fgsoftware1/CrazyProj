@@ -1,6 +1,7 @@
 {
     "explorer.compactFolders": false,
     "editor.formatOnSave": true,
+    "C_Cpp.codeAnalysis.runAutomatically": true,
     "files.associations": {
         "system_error": "cpp",
         "xlocale": "cpp",
@@ -76,6 +77,12 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "coroutine": "cpp",
+        "mutex": "cpp",
+        "numeric": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "filesystem": "cpp"
     }
 }

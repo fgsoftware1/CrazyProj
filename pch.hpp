@@ -4,7 +4,13 @@
 
 #include <memory>
 #include <string>
+#include <stdio.h>
+#include <math.h>
 #include <iostream>
+#include <map>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 template <typename T>
 using Scope = std::unique_ptr<T>;
@@ -42,7 +48,7 @@ constexpr Ref<T> createRef(Args &&...args)
     protected: \
         type m_##name; \
     public: \
-        const type get_##name() const { return m_##name; } \
+        type get_##name() const { return m_##name; } \
 
 #define CONST_PROPERTY(type, name, value) \
     protected: \
@@ -57,6 +63,11 @@ constexpr Ref<T> createRef(Args &&...args)
         static const type& get_##name() { return m_##name; } \
         static void set_##name(const type& value) { m_##name = value; } \
 
+//!STRUCTURES
+#define ENUM_CLASS(name, ...) \
+    enum class name { \
+        __VA_ARGS__ \
+    };
 
 //!METHODS
 #define FUNC(type, name, ...) \
@@ -64,6 +75,9 @@ constexpr Ref<T> createRef(Args &&...args)
 
 #define FUNC_CONST(type, name, ...) \
     type name(__VA_ARGS__) const;
+
+#define FUNC_VIRTUAL(type, name, ...) \
+    virtual type name(__VA_ARGS__) = 0;
 
 #define FUNC_VIRTUAL(type, name, ...) \
     virtual type name(__VA_ARGS__) = 0;
@@ -80,11 +94,17 @@ constexpr Ref<T> createRef(Args &&...args)
 #define FUNC_OVERLOAD(type, name, ...) \
     FUNC(type, name, __VA_ARGS__)
 
+#define FUNC_INLINE(type, name, ...) \
+    inline type name() { __VA_ARGS__; }
+
+#define FUNC_INLINE_CONST(type, name, ...) \
+    inline type name() const { __VA_ARGS__; }
+
 #define FUNC_IMPL(klass, type, name, ...) \
-    type klass::name(__VA_ARGS__) { \
+    type klass::name(__VA_ARGS__) { 
 
 #define FUNC_IMPL_CONST(klass, type, name, ...) \
-    type klass::name(__VA_ARGS__) const { \
+    type klass::name(__VA_ARGS__) const { 
 
 #define FUNC_END }
 

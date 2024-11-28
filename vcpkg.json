@@ -1,15 +1,31 @@
 {
   "dependencies": [
-    "glad",
+    {
+      "name": "devil",
+      "default-features": false,
+      "features": [
+        "libpng",
+        "openexr",
+        "tiff"
+      ]
+    },
+    {
+      "name": "glad",
+      "features": [
+        "gl-api-43"
+      ]
+    },
     "glfw3",
     {
       "name": "imgui",
       "features": [
         "docking-experimental",
         "glfw-binding",
-        "opengl3-binding"
+        "opengl3-binding",
+        "freetype"
       ]
     },
-    "yaml-cpp"
+    "yaml-cpp",
+    "glm"
   ]
 }

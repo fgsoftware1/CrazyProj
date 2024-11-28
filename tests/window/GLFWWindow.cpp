@@ -6,6 +6,9 @@ if (!glfwInit())
 
 glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
+glfwWindowHint(GLFW_MAXIMIZED, GL_TRUE);
 CTOR_END
 
 DTOR_IMPL(GLFWWindow)
@@ -41,6 +44,8 @@ FUNC_IMPL(GLFWWindow, void, update)
 if (m_window)
 {
     glfwPollEvents();
+    glfwSwapBuffers(m_window);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 FUNC_END
 
