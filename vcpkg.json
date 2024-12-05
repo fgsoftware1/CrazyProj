@@ -24,8 +24,6 @@
         "opengl3-binding",
         "freetype"
       ]
-    },
-    "yaml-cpp",
-    "glm"
+    }
   ]
 }
