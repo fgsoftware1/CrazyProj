@@ -1,6 +1,0 @@
-main call:[Begin,Cleanup,End,GetDrawData,ImGui_ImplGlfw_NewFrame,ImGui_ImplOpenGL3_NewFrame,ImGui_ImplOpenGL3_RenderDrawData,InitializeWindow,NewFrame,Render,glClear,glClearColor,glViewport,glfwGetFramebufferSize,glfwPollEvents,glfwSwapBuffers,glfwWindowShouldClose] noreturn:[glfwSwapBuffers]
-InitializeWindow call:[CreateContext,IMGUI_CHECKVERSION,ImGui_ImplGlfw_InitForOpenGL,ImGui_ImplOpenGL3_Init,StyleColorsDark,gladLoadGLLoader,glfwCreateWindow,glfwInit,glfwMakeContextCurrent,glfwTerminate,glfwWindowHint]
-HandleLinks global:[State] call:[IsLinkCreated,Link,push_back] noreturn:[Link,push_back]
-UpdateNodeValues global:[State]
-HandleContextMenu global:[State] call:[BeginPopup,EndPopup,GetMousePos,IsEditorHovered,IsMouseClicked,MenuItem,OpenPopup,SetNextWindowPos,push_back,sizeof,snprintf] noreturn:[EndPopup,GetMousePos,push_back]
-Cleanup call:[DestroyContext,ImGui_ImplGlfw_Shutdown,ImGui_ImplOpenGL3_Shutdown,glfwDestroyWindow,glfwTerminate] noreturn:[glfwTerminate]

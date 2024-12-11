@@ -1,5 +1,0 @@
-Node
-show_editor call:[Begin,BeginInputAttribute,BeginNode,BeginNodeEditor,BeginNodeTitleBar,BeginOutputAttribute,CalcTextSize,EditorContextSet,End,EndInputAttribute,EndNode,EndNodeEditor,EndNodeTitleBar,EndOutputAttribute,GetMousePos,Indent,IsEditorHovered,IsKeyReleased,IsLinkCreated,IsLinkDestroyed,IsWindowFocused,Link,Node,SetNodeScreenSpacePos,SnapNodeToGrid,TextUnformatted,assert,begin,end,erase,find_if,push_back] noreturn:[End,EndNode,Link,erase,push_back]
-NodeEditorInitialize call:[EditorContextCreate,GetIO,GetStyle,PushAttributeFlag]
-NodeEditorShow call:[show_editor] noreturn:[show_editor]
-NodeEditorShutdown call:[EditorContextFree,PopAttributeFlag] noreturn:[EditorContextFree]
