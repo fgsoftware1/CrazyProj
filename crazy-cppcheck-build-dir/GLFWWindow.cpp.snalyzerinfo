@@ -1,0 +1,10 @@
+createScope
+createRef
+get_window
+GLFWWindow call:[exit,glfwInit,glfwWindowHint] noreturn:[exit,glfwWindowHint]
+GLFWWindow call:[close,glfwTerminate] noreturn:[glfwTerminate]
+create call:[exit,glfwCreateWindow,glfwTerminate] noreturn:[exit]
+show call:[gladLoadGLLoader,glfwMakeContextCurrent,glfwTerminate] noreturn:[glfwTerminate]
+close call:[glfwDestroyWindow] noreturn:[glfwDestroyWindow]
+update call:[glClear,glfwPollEvents,glfwSwapBuffers] noreturn:[glClear]
+isOpen call:[glfwWindowShouldClose] noreturn:[glfwWindowShouldClose]

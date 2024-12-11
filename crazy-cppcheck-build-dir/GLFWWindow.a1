@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="10168880113890071797">
+        <error id="missingInclude" severity="information" msg="Include file: &quot;glad/glad.h&quot; not found." verbose="Include file: &quot;glad/glad.h&quot; not found.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\GLFWWindow.hpp" line="4" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;GLFW/glfw3.h&quot; not found." verbose="Include file: &quot;GLFW/glfw3.h&quot; not found.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\GLFWWindow.hpp" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="3" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="6" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="7" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;filesystem&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;filesystem&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="10" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="11" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iterator&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iterator&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="12" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stack&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stack&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="13" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="14" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;utility&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;utility&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="16" column="0"/>
+        </error>
+        <error id="virtualCallInConstructor" severity="style" msg="Virtual function &apos;close&apos; is called from destructor &apos;~GLFWWindow()&apos; at line 15. Dynamic binding is not used." verbose="Virtual function &apos;close&apos; is called from destructor &apos;~GLFWWindow()&apos; at line 15. Dynamic binding is not used." file0="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/GLFWWindow.cpp">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\GLFWWindow.hpp" line="12" column="5" info="close is a virtual function"/>
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\GLFWWindow.cpp" line="15" column="1" info="Calling close"/>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~GLFWWindow&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~GLFWWindow&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/GLFWWindow.cpp">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\GLFWWindow.hpp" line="9" column="1" info="Destructor in derived class"/>
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\IWindow.hpp" line="6" column="1" info="Virtual destructor in base class"/>
+            <symbol>~GLFWWindow</symbol>
+        </error>
+  <FileInfo check="Class">
+<class name="GLFWWindow" file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/GLFWWindow.hpp" line="9" col="1" hash="13749347074274551000"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/pch.hpp" functionName="createScope" lineNumber="23"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/pch.hpp" functionName="createRef" lineNumber="31"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/GLFWWindow.hpp" functionName="get_window" lineNumber="16"/>
+    <functioncall functionName="Args"/>
+    <functioncall functionName="GLADloadproc"/>
+    <functioncall functionName="GLFWWindow"/>
+    <functioncall functionName="GLFW_CONTEXT_VERSION_MAJOR"/>
+    <functioncall functionName="GLFW_CONTEXT_VERSION_MINOR"/>
+    <functioncall functionName="GLFW_MAXIMIZED"/>
+    <functioncall functionName="GLFW_OPENGL_CORE_PROFILE"/>
+    <functioncall functionName="GLFW_OPENGL_PROFILE"/>
+    <functioncall functionName="GLFW_RESIZABLE"/>
+    <functioncall functionName="GL_DEPTH_BUFFER_BIT"/>
+    <functioncall functionName="GL_TRUE"/>
+    <functioncall functionName="T"/>
+    <functioncall functionName="close"/>
+    <functioncall functionName="exit"/>
+    <functioncall functionName="forward"/>
+    <functioncall functionName="glClear"/>
+    <functioncall functionName="gladLoadGLLoader"/>
+    <functioncall functionName="glfwCreateWindow"/>
+    <functioncall functionName="glfwDestroyWindow"/>
+    <functioncall functionName="glfwGetProcAddress"/>
+    <functioncall functionName="glfwInit"/>
+    <functioncall functionName="glfwMakeContextCurrent"/>
+    <functioncall functionName="glfwPollEvents"/>
+    <functioncall functionName="glfwSwapBuffers"/>
+    <functioncall functionName="glfwTerminate"/>
+    <functioncall functionName="glfwWindowHint"/>
+    <functioncall functionName="glfwWindowShouldClose"/>
+    <functioncall functionName="make_shared"/>
+    <functioncall functionName="make_unique"/>
+    <functioncall functionName="override"/>
+    <functioncall functionName="shared_ptr"/>
+    <functioncall functionName="unique_ptr"/>
+  </FileInfo>
+</analyzerinfo>

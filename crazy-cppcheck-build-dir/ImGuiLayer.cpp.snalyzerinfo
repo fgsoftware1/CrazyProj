@@ -1,0 +1,22 @@
+createScope
+createRef
+get_dockspaceOpen
+set_dockspaceOpen
+get_opt_fullscreen
+set_opt_fullscreen
+get_opt_padding
+set_opt_padding
+get_dockspace_flags
+set_dockspace_flags
+get_window_flags
+set_window_flags
+get_window
+ImGuiLayer
+ImGuiLayer call:[shutdown] noreturn:[shutdown]
+init call:[CreateContext,GetIO,IMGUI_CHECKVERSION,ImGui_ImplGlfw_InitForOpenGL,ImGui_ImplOpenGL3_Init,NodeEditorInitialize,StyleColorsDark] noreturn:[ImGui_ImplOpenGL3_Init]
+shutdown call:[DestroyContext,ImGui_ImplGlfw_Shutdown,ImGui_ImplOpenGL3_Shutdown] noreturn:[DestroyContext,ImGui_ImplOpenGL3_Shutdown]
+begin call:[ImGui_ImplGlfw_NewFrame,ImGui_ImplOpenGL3_NewFrame,NewFrame,beginDockspace] noreturn:[beginDockspace]
+end call:[GetDrawData,GetIO,ImGui_ImplOpenGL3_RenderDrawData,ImVec2,Render,RenderPlatformWindowsDefault,UpdatePlatformWindows,endDockspace,glfwGetCurrentContext,glfwGetFramebufferSize,glfwMakeContextCurrent] noreturn:[glfwMakeContextCurrent]
+beginDockspace call:[Begin,DockSpace,GetID,GetIO,GetMainViewport,ImVec2,PopStyleVar,PushStyleVar,SetNextWindowPos,SetNextWindowSize,SetNextWindowViewport,setupDockspaceMenuBar] noreturn:[DockSpace,PopStyleVar,PushStyleVar,setupDockspaceMenuBar]
+endDockspace call:[End] noreturn:[End]
+setupDockspaceMenuBar call:[BeginMenu,BeginMenuBar,EndMenu,EndMenuBar,MenuItem,Separator] noreturn:[EndMenu,EndMenuBar]

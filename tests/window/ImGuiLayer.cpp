@@ -1,4 +1,6 @@
 #include "ImGuiLayer.hpp"
+#include "imnodes.h"
+#include "node_editor.h"
 
 CTOR_IMPL_WITH_PARAMS(ImGuiLayer, 
     m_dockspaceOpen(true), 
@@ -18,17 +20,24 @@ FUNC_IMPL(ImGuiLayer, void, init, GLFWwindow* window)
     
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGuiIO& io = ImGui::GetIO(); 
+    (void)io;
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
+    ImNodes::CreateContext();
+    example::NodeEditorInitialize();
+    ImGui::StyleColorsDark();
+    ImNodes::StyleColorsDark();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 410");
 FUNC_END
 
 FUNC_IMPL(ImGuiLayer, void, shutdown)
-    ImGui_ImplOpenGL3_Shutdown();
+    if(gladLoadGLLoader)
+        ImGui_ImplOpenGL3_Shutdown();
+
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 FUNC_END

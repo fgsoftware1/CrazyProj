@@ -1,3 +1,7 @@
 [submodule "vcpkg"]
 	path = vcpkg
 	url = https://github.com/microsoft/vcpkg.git
+[submodule "vendor/imgui-node-editor"]
+	path = vendor/imgui-node-editor
+	url = https://github.com/thedmd/imgui-node-editor.git
+	branch = docking

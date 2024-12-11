@@ -7,6 +7,13 @@
 #include <iostream>
 #include <map>
 #include <filesystem>
+#include <algorithm>
+#include <cassert>
+#include <iterator>
+#include <stack>
+#include <stddef.h>
+#include <utility>
+#include <vector>
 
 namespace fs = std::filesystem;
 
@@ -33,6 +40,9 @@ constexpr Ref<T> createRef(Args &&...args)
 //!NAMESPACES
 #define NAMESPACE(name) namespace name {
 #define END_NAMESPACE }
+
+#define ALIAS(origin, replace) \
+    using origin = replace;
 
 //!PROPERTIES
 #define PROPERTY(type, name) \
@@ -62,9 +72,31 @@ constexpr Ref<T> createRef(Args &&...args)
         static void set_##name(const type& value) { m_##name = value; } \
 
 //!STRUCTURES
+#define ENUM(name, ...) \
+    enum name { \
+        __VA_ARGS__ \
+    };
+
 #define ENUM_CLASS(name, ...) \
     enum class name { \
         __VA_ARGS__ \
+    };
+
+#define STRUCT(name, ...) \
+    struct name { \
+        __VA_ARGS__ \
+    };
+
+#define TEMPLATED_STRUCT(name, type, ...) \
+    template<typename type> \
+    struct name { \
+        __VA_ARGS__ \
+    };
+
+#define END_ENUM \
+    };
+
+#define END_STRUCT \
     };
 
 //!METHODS
@@ -98,6 +130,10 @@ constexpr Ref<T> createRef(Args &&...args)
 #define FUNC_INLINE_CONST(type, name, ...) \
     inline type name() const { __VA_ARGS__; }
 
+#define TEMPLATED_FUNC(name, type, returnType, ...) \
+    template<typename type> \
+    returnType name(__VA_ARGS__){ \
+
 #define FUNC_IMPL(klass, type, name, ...) \
     type klass::name(__VA_ARGS__) { 
 
@@ -109,6 +145,10 @@ constexpr Ref<T> createRef(Args &&...args)
 //!CONSTRUCTORS
 #define CTOR(name, ...) \
     name(__VA_ARGS__);
+
+#define TEMPLATED_CTOR(name, type, ...) \
+    template<typename type> \
+    name(__VA_ARGS__){ 
 
 #define DTOR(name)  \
     ~name();
@@ -131,6 +171,11 @@ constexpr Ref<T> createRef(Args &&...args)
     public: \
         CTOR(className, __VA_ARGS__); \
         DTOR(className); 
+
+#define TEMPLATED_CLASS(className, type, ...) \
+    template<typename type> \
+    class className { \
+    public: 
 
 #define END_CLASS };
 

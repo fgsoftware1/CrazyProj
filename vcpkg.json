@@ -16,6 +16,7 @@
       ]
     },
     "glfw3",
+    "sdl2",
     {
       "name": "imgui",
       "features": [

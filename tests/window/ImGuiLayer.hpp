@@ -1,6 +1,7 @@
 #ifndef IMGUILAYER_HPP
 #define IMGUILAYER_HPP
 
+#include "glad/glad.h"
 #include "GLFW/glfw3.h"
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"

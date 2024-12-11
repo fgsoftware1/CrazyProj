@@ -1,0 +1,9 @@
+mainCar.a1:Debug|x64:C:/Users/babywolf/Desktop/projects/CrazyProj/tests/car/mainCar.cpp
+cmake_pch.a1:Debug|x64:C:/Users/babywolf/Desktop/projects/CrazyProj/build/CMakeFiles/Crazy.dir/cmake_pch.cxx
+Crazy.a1:Debug|x64:C:/Users/babywolf/Desktop/projects/CrazyProj/Crazy.cpp
+GLFWWindow.a1:Debug|x64:C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/GLFWWindow.cpp
+ImGuiLayer.a1:Debug|x64:C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.cpp
+TextureImporter.a1:Debug|x64:C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/TextureImporter.cpp
+mainWindow.a1:Debug|x64:C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/mainWindow.cpp
+multi_editor.a1:Debug|x64:C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/multi_editor.cpp
+imnodes.a1:Debug|x64:C:/Users/babywolf/Desktop/projects/CrazyProj/vendor/ImNodes/imnodes.cpp

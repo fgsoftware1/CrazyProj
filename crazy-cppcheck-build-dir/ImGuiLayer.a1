@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="3211031132429693556">
+        <error id="missingInclude" severity="information" msg="Include file: &quot;glad/glad.h&quot; not found." verbose="Include file: &quot;glad/glad.h&quot; not found.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\ImGuiLayer.hpp" line="4" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;GLFW/glfw3.h&quot; not found." verbose="Include file: &quot;GLFW/glfw3.h&quot; not found.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\ImGuiLayer.hpp" line="5" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;imgui.h&quot; not found." verbose="Include file: &quot;imgui.h&quot; not found.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\ImGuiLayer.hpp" line="6" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;imgui_impl_opengl3.h&quot; not found." verbose="Include file: &quot;imgui_impl_opengl3.h&quot; not found.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\ImGuiLayer.hpp" line="7" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;imgui_impl_glfw.h&quot; not found." verbose="Include file: &quot;imgui_impl_glfw.h&quot; not found.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\ImGuiLayer.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="3" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="6" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="7" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;filesystem&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;filesystem&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="10" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="11" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iterator&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iterator&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="12" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stack&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stack&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="13" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="14" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;utility&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;utility&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\pch.hpp" line="16" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\vendor\ImNodes\imnodes.h" line="3" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;imgui.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;imgui.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\vendor\ImNodes\imnodes.h" line="4" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.cpp">
+            <location file="C:\Users\babywolf\Desktop\projects\CrazyProj\tests\window\ImGuiLayer.cpp" line="0" column="0"/>
+        </error>
+  <FileInfo check="Class">
+<class name="ImGuiLayer" file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" line="12" col="1" hash="8494351399368751409"/>
+<class name="ImNodesIO::EmulateThreeButtonMouse" file="C:/Users/babywolf/Desktop/projects/CrazyProj/vendor/ImNodes/imnodes.h" line="112" col="5" hash="15425988435305037124"/>
+<class name="ImNodesIO::LinkDetachWithModifierClick" file="C:/Users/babywolf/Desktop/projects/CrazyProj/vendor/ImNodes/imnodes.h" line="124" col="5" hash="9739698886563203004"/>
+<class name="ImNodesIO::MultipleSelectModifier" file="C:/Users/babywolf/Desktop/projects/CrazyProj/vendor/ImNodes/imnodes.h" line="140" col="5" hash="4357314192541175544"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/pch.hpp" functionName="createScope" lineNumber="23"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/pch.hpp" functionName="createRef" lineNumber="31"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="get_dockspaceOpen" lineNumber="13"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="set_dockspaceOpen" lineNumber="13"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="get_opt_fullscreen" lineNumber="14"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="set_opt_fullscreen" lineNumber="14"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="get_opt_padding" lineNumber="15"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="set_opt_padding" lineNumber="15"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="get_dockspace_flags" lineNumber="16"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="set_dockspace_flags" lineNumber="16"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="get_window_flags" lineNumber="17"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="set_window_flags" lineNumber="17"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.hpp" functionName="get_window" lineNumber="18"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.cpp" functionName="init" lineNumber="18"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.cpp" functionName="shutdown" lineNumber="37"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.cpp" functionName="begin" lineNumber="45"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.cpp" functionName="end" lineNumber="52"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.cpp" functionName="beginDockspace" lineNumber="72"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.cpp" functionName="endDockspace" lineNumber="113"/>
+    <functiondecl file="C:/Users/babywolf/Desktop/projects/CrazyProj/tests/window/ImGuiLayer.cpp" functionName="setupDockspaceMenuBar" lineNumber="117"/>
+    <functioncall functionName="Args"/>
+    <functioncall functionName="Begin"/>
+    <functioncall functionName="BeginMenu"/>
+    <functioncall functionName="BeginMenuBar"/>
+    <functioncall functionName="CreateContext"/>
+    <functioncall functionName="DestroyContext"/>
+    <functioncall functionName="DockSpace"/>
+    <functioncall functionName="End"/>
+    <functioncall functionName="EndMenu"/>
+    <functioncall functionName="EndMenuBar"/>
+    <functioncall functionName="GetDrawData"/>
+    <functioncall functionName="GetID"/>
+    <functioncall functionName="GetIO"/>
+    <functioncall functionName="GetMainViewport"/>
+    <functioncall functionName="IMGUI_CHECKVERSION"/>
+    <functioncall functionName="ImGuiDockNodeFlags_None"/>
+    <functioncall functionName="ImGuiLayer"/>
+    <functioncall functionName="ImGuiStyleVar_WindowBorderSize"/>
+    <functioncall functionName="ImGuiStyleVar_WindowPadding"/>
+    <functioncall functionName="ImGuiStyleVar_WindowRounding"/>
+    <functioncall functionName="ImGuiWindowFlags_NoDocking"/>
+    <functioncall functionName="ImGuiWindowFlags_NoNavFocus"/>
+    <functioncall functionName="ImGui_ImplGlfw_InitForOpenGL"/>
+    <functioncall functionName="ImGui_ImplGlfw_NewFrame"/>
+    <functioncall functionName="ImGui_ImplGlfw_Shutdown"/>
+    <functioncall functionName="ImGui_ImplOpenGL3_Init"/>
+    <functioncall functionName="ImGui_ImplOpenGL3_NewFrame"/>
+    <functioncall functionName="ImGui_ImplOpenGL3_RenderDrawData"/>
+    <functioncall functionName="ImGui_ImplOpenGL3_Shutdown"/>
+    <functioncall functionName="ImNodesIO"/>
+    <functioncall functionName="ImNodesStyle"/>
+    <functioncall functionName="MenuItem"/>
+    <functioncall functionName="NULL"/>
+    <functioncall functionName="NewFrame"/>
+    <functioncall functionName="NodeEditorInitialize"/>
+    <functioncall functionName="PopStyleVar"/>
+    <functioncall functionName="PushStyleVar"/>
+    <functioncall functionName="Render"/>
+    <functioncall functionName="RenderPlatformWindowsDefault"/>
+    <functioncall functionName="Separator"/>
+    <functioncall functionName="SetNextWindowPos"/>
+    <functioncall functionName="SetNextWindowSize"/>
+    <functioncall functionName="SetNextWindowViewport"/>
+    <functioncall functionName="StyleColorsDark"/>
+    <functioncall functionName="T"/>
+    <functioncall functionName="UpdatePlatformWindows"/>
+    <functioncall functionName="beginDockspace"/>
+    <functioncall functionName="endDockspace"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="forward"/>
+    <functioncall functionName="gladLoadGLLoader"/>
+    <functioncall functionName="glfwGetCurrentContext"/>
+    <functioncall functionName="glfwGetFramebufferSize"/>
+    <functioncall functionName="glfwMakeContextCurrent"/>
+    <functioncall functionName="make_shared"/>
+    <functioncall functionName="make_unique"/>
+    <functioncall functionName="setupDockspaceMenuBar"/>
+    <functioncall functionName="shared_ptr"/>
+    <functioncall functionName="shutdown"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="unique_ptr"/>
+  </FileInfo>
+</analyzerinfo>

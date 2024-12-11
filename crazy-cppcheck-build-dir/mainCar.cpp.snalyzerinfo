@@ -1,0 +1,13 @@
+createScope
+createRef
+Car
+get_brand
+set_brand
+get_model
+set_model
+drive
+ElectricCar
+get_batteryCapacity
+set_batteryCapacity
+drive
+main call:[drive,get,get_batteryCapacity,get_brand,get_model,set_batteryCapacity,set_brand,set_model]
