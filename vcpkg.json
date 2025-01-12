@@ -4,9 +4,7 @@
       "name": "devil",
       "default-features": false,
       "features": [
-        "libpng",
-        "openexr",
-        "tiff"
+        "libpng"
       ]
     },
     {
@@ -16,14 +14,14 @@
       ]
     },
     "glfw3",
-    "sdl2",
     {
       "name": "imgui",
       "features": [
         "docking-experimental",
         "glfw-binding",
         "opengl3-binding",
-        "freetype"
+        "win32-binding",
+        "dx9-binding"
       ]
     }
   ]

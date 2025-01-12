@@ -83,6 +83,7 @@
         "numeric": "cpp",
         "stop_token": "cpp",
         "thread": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "bitset": "cpp"
     }
 }

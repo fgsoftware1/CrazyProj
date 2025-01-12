@@ -1,5 +1,6 @@
 #include "GLFWWindow.hpp"
 #include "ImGuiLayer.hpp"
+#include "GLImageImporter.hpp"
 
 enum class WindowType
 {
@@ -12,6 +13,7 @@ int main()
 {
     WindowType windowType = WindowType::GLFW;
     IWindow *window = nullptr;
+	IImageImporter* imageImporter = nullptr;
 
     switch (windowType)
     {
@@ -20,6 +22,7 @@ int main()
     //     break;
     case WindowType::GLFW:
         window = new GLFWWindow();
+		imageImporter = new GLImageImporter();
         break;
         // case WindowType::SDL:
         //     window = new SDLWindow();
@@ -34,7 +37,12 @@ int main()
         window->show();
 
         auto imguiLayer = MAKE_SCOPE(ImGuiLayer);
-        imguiLayer->init(glfwWindow->get_window());
+        imguiLayer->init(glfwWindow->getWindow());
+
+        GLuint texture1 = imageImporter->loadImage("fge.png");
+        if (texture1 == 0) {
+            return -1; // Failed to load the texture
+        }
 
         while (window->isOpen())
         {
@@ -43,6 +51,7 @@ int main()
 
             ImGui::Begin("Example Window");
             ImGui::Text("Hello, Docking!");
+			ImGui::Image((void*)(intptr_t)texture1, ImVec2(500, 500));
             ImGui::End();
 
             imguiLayer->end();
