@@ -59,7 +59,6 @@ int main()
             ImGui::Begin("Image Gallery");
             for (GLuint textureID : glImageImporter->getTextureIDs()) {
                 ImGui::Image((void*)(intptr_t)textureID, ImVec2(200, 200));
-                ImGui::Separator();
                 ImGui::SameLine();
             }
             ImGui::End();
