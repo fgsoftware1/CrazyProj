@@ -1,6 +1,6 @@
 #include "GLFWWindow.hpp"
 
-CTOR_IMPL_WITH_PARAMS(GLFWWindow, m_window(nullptr))
+CTOR_IMPL_WITH_PARAMS(GLFWWindow, m_Window(nullptr))
 if (!glfwInit())
     exit(EXIT_FAILURE);
 
@@ -17,8 +17,8 @@ glfwTerminate();
 DTOR_END
 
 FUNC_IMPL(GLFWWindow, void, create, const char *title, int width, int height)
-m_window = glfwCreateWindow(width, height, title, nullptr, nullptr);
-if (!m_window)
+m_Window = glfwCreateWindow(width, height, title, nullptr, nullptr);
+if (!m_Window)
 {
     glfwTerminate();
     std::cerr << "Can't initialize glfw!" << std::endl;
@@ -27,7 +27,7 @@ if (!m_window)
 FUNC_END
 
 FUNC_IMPL(GLFWWindow, void, show)
-glfwMakeContextCurrent(m_window);
+glfwMakeContextCurrent(m_Window);
 
 if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 {
@@ -37,18 +37,19 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 FUNC_END
 
 FUNC_IMPL(GLFWWindow, void, close)
-glfwDestroyWindow(m_window);
+glfwDestroyWindow(m_Window);
+glfwTerminate();
 FUNC_END
 
 FUNC_IMPL(GLFWWindow, void, update)
-if (m_window)
+if (m_Window)
 {
     glfwPollEvents();
-    glfwSwapBuffers(m_window);
+    glfwSwapBuffers(m_Window);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 FUNC_END
 
 FUNC_IMPL_CONST(GLFWWindow, bool, isOpen)
-return m_window != nullptr && !glfwWindowShouldClose(m_window);
+return m_Window != nullptr && !glfwWindowShouldClose(m_Window);
 FUNC_END

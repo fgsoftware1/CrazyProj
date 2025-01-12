@@ -13,7 +13,7 @@ DERIVED_CLASS(GLFWWindow, IWindow)
     FUNC_OVERRIDE(void, update)
     FUNC_CONST_OVERRIDE(bool, isOpen)
 
-    READONLY_PROPERTY(GLFWwindow*, window)
+    READONLY_PROPERTY(GLFWwindow*, Window)
 END_CLASS
 
 #endif

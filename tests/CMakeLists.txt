@@ -4,7 +4,6 @@ project(CrazyTests LANGUAGES CXX)
 find_package(glad CONFIG REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
 find_package(imgui CONFIG REQUIRED)
-find_package(sdl2 CONFIG REQUIRED)
 find_package(DevIL)
 
 file(GLOB_RECURSE CAR_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/car/*.cpp)
@@ -20,4 +19,4 @@ target_precompile_headers(WindowTests REUSE_FROM Crazy)
 target_include_directories(WindowTests PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/window
 )
-target_link_libraries(WindowTests PRIVATE glad::glad glfw imgui::imgui ${IL_LIBRARIES} unofficial::imgui-node-editor::imgui-node-editor)
+target_link_libraries(WindowTests PRIVATE glad::glad glfw imgui::imgui ${IL_LIBRARIES})

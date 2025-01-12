@@ -14,6 +14,8 @@
 #include <stddef.h>
 #include <utility>
 #include <vector>
+#include <unordered_map>
+#include <mutex>
 
 namespace fs = std::filesystem;
 
@@ -49,26 +51,46 @@ constexpr Ref<T> createRef(Args &&...args)
     protected: \
         type m_##name; \
     public: \
-        const type& get_##name() const { return m_##name; } \
-        void set_##name(const type& value) { m_##name = value; } \
+        const type& get##name() const { return m_##name; } \
+        void set##name(const type& value) { m_##name = value; } \
+
+#define PROPERTY_OVERRIDE(type, name) \
+    protected: \
+        type m_##name; \
+    public: \
+        const type& get##name() const override { return m_##name; } \
+        void set##name(const type& value) { m_##name = value; } \
 
 #define READONLY_PROPERTY(type, name) \
     protected: \
         type m_##name; \
     public: \
-        type get_##name() const { return m_##name; } \
+        type get##name() const { return m_##name; } \
+
+#define READONLY_PROPERTY_OVERRIDE(type, name) \
+    protected: \
+        type m_##name; \
+    public: \
+        type get##name() const override { return m_##name; } \
+
+#define READONLY_PROPERTY_OVERRIDE_GENERIC(type, name) \
+    protected: \
+        type m_##name; \
+    public: \
+        template<typename type> \
+        type get##name() const override { return m_##name; } \
 
 #define CONST_PROPERTY(type, name, value) \
     protected: \
         const type m_##name = value; \
     public: \
-        const type& get_##name() const { return m_##name; } \
+        const type& get##name() const { return m_##name; } \
 
 #define STATIC_PROPERTY(type, name) \
     protected: \
         static type m_##name; \
     public: \
-        static const type& get_##name() { return m_##name; } \
+        static const type& get##name() { return m_##name; } \
         static void set_##name(const type& value) { m_##name = value; } \
 
 //!STRUCTURES
@@ -87,7 +109,7 @@ constexpr Ref<T> createRef(Args &&...args)
         __VA_ARGS__ \
     };
 
-#define TEMPLATED_STRUCT(name, type, ...) \
+#define GENERIC_STRUCT(name, type, ...) \
     template<typename type> \
     struct name { \
         __VA_ARGS__ \
@@ -113,6 +135,10 @@ constexpr Ref<T> createRef(Args &&...args)
     virtual type name(__VA_ARGS__) = 0;
 
 #define FUNC_CONST_VIRTUAL(type, name, ...) \
+    virtual type name(__VA_ARGS__) const = 0;
+
+#define FUNC_CONST_VIRTUAL_GENERIC(type, name, ...) \
+    template<typename type> \
     virtual type name(__VA_ARGS__) const = 0;
 
 #define FUNC_OVERRIDE(type, name, ...) \

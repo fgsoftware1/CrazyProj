@@ -1,5 +1,6 @@
 #include "GLFWWindow.hpp"
 #include "ImGuiLayer.hpp"
+#include "GLImageImporter.hpp"
 
 enum class WindowType
 {
@@ -12,6 +13,7 @@ int main()
 {
     WindowType windowType = WindowType::GLFW;
     IWindow *window = nullptr;
+	IImageImporter* imageImporter = nullptr;
 
     switch (windowType)
     {
@@ -20,6 +22,7 @@ int main()
     //     break;
     case WindowType::GLFW:
         window = new GLFWWindow();
+		imageImporter = new GLImageImporter();
         break;
         // case WindowType::SDL:
         //     window = new SDLWindow();
@@ -27,6 +30,7 @@ int main()
     }
 
     GLFWWindow *glfwWindow = static_cast<GLFWWindow *>(window);
+    GLImageImporter *glImageImporter = static_cast<GLImageImporter*>(imageImporter);
 
     if (window)
     {
@@ -34,15 +38,30 @@ int main()
         window->show();
 
         auto imguiLayer = MAKE_SCOPE(ImGuiLayer);
-        imguiLayer->init(glfwWindow->get_window());
+        imguiLayer->init(glfwWindow->getWindow());
+
+        std::vector<std::string> imagePaths = {
+            "fge.png",
+            "awesomeface.png"
+        };
+
+        for (const auto& path : imagePaths) {
+            if (!imageImporter->loadImage(path)) {
+                std::cerr << "Failed to load image: " << path << std::endl;
+            }
+        }
 
         while (window->isOpen())
         {
             window->update();
             imguiLayer->begin();
 
-            ImGui::Begin("Example Window");
-            ImGui::Text("Hello, Docking!");
+            ImGui::Begin("Image Gallery");
+            for (GLuint textureID : glImageImporter->getTextureIDs()) {
+                ImGui::Image((void*)(intptr_t)textureID, ImVec2(200, 200));
+                ImGui::Separator();
+                ImGui::SameLine();
+            }
             ImGui::End();
 
             imguiLayer->end();
