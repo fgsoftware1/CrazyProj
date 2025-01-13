@@ -9,32 +9,53 @@ DTOR_IMPL(GLImageImporter)
 DTOR_END
 
 FUNC_IMPL(GLImageImporter, bool, loadImage, const std::string& path)
-std::lock_guard<std::mutex> lock(m_mutex);
-
-    ilGenImages(1, &m_ImageID);
-    ilBindImage(m_ImageID);
+    std::lock_guard<std::mutex> lock(m_mutex);
+    
+    ILuint imageID;
+    ilGenImages(1, &imageID);
+    ilBindImage(imageID);
 
     if (!ilLoadImage(path.c_str())) {
-        ilDeleteImages(1, &m_ImageID);
+        ilDeleteImages(1, &imageID);
         return false;
     }
 
     ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
     
-    m_Width = ilGetInteger(IL_IMAGE_WIDTH);
-    m_Height = ilGetInteger(IL_IMAGE_HEIGHT);
-    m_Channels = ilGetInteger(IL_IMAGE_CHANNELS);
+    int width = ilGetInteger(IL_IMAGE_WIDTH);
+    int height = ilGetInteger(IL_IMAGE_HEIGHT);
+    unsigned char* data = ilGetData();
 
+    bool success = generateTexture(data, width, height);
+    
+    ilDeleteImages(1, &imageID);
+    return success;
+FUNC_END
 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+FUNC_IMPL(GLImageImporter, bool, generateTexture, const unsigned char* data, int width, int height)
+    GLuint textureID;
+    glGenTextures(1, &textureID);
+    glBindTexture(GL_TEXTURE_2D, textureID);
+    
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-glGenerateMipmap(GL_TEXTURE_2D);
-
-m_TextureIDs.push_back(m_TextureID); // Store the texture ID
+    glGenerateMipmap(GL_TEXTURE_2D);
+    
+    m_TextureIDs.push_back(textureID);
+    m_isLoaded = true;
     return true;
 FUNC_END
 
+FUNC_IMPL(GLImageImporter, void, clearTextures)
+    std::lock_guard<std::mutex> lock(m_mutex);
+    for(GLuint id : m_TextureIDs) {
+        glDeleteTextures(1, &id);
+    }
+    m_TextureIDs.clear();
+    m_isLoaded = false;
+FUNC_END
 FUNC_IMPL(GLImageImporter, bool, saveImage, const std::string & path)
 std::lock_guard<std::mutex> lock(m_mutex);
 if (!m_isLoaded || m_ImageID == 0) return false;
@@ -60,32 +81,5 @@ if (m_ImageID != 0) {
     ilDeleteImages(1, &m_ImageID);
     m_ImageID = 0;
 }
-
-cleanupInactiveContexts();
 m_isLoaded = false;
-FUNC_END
-
-FUNC_IMPL(GLImageImporter, GLuint, getTextureForCurrentThread)
-auto threadId = std::this_thread::get_id();
-auto& contextInfo = m_contextMap[threadId];
-
-if (!contextInfo.isActive) {
-    glGenTextures(1, &contextInfo.textureID);
-    contextInfo.threadID = threadId;
-    contextInfo.isActive = true;
-}
-
-return contextInfo.textureID;
-FUNC_END
-
-FUNC_IMPL(GLImageImporter, void, cleanupInactiveContexts)
-for (auto it = m_contextMap.begin(); it != m_contextMap.end();) {
-    if (it->second.isActive) {
-        glDeleteTextures(1, &it->second.textureID);
-        it = m_contextMap.erase(it);
-    }
-    else {
-        ++it;
-    }
-}
 FUNC_END

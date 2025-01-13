@@ -41,8 +41,8 @@ int main()
         imguiLayer->init(glfwWindow->getWindow());
 
         std::vector<std::string> imagePaths = {
-            "fge.png",
-            "awesomeface.png"
+            "awesomeface.png", 
+            "fge.png"
         };
 
         for (const auto& path : imagePaths) {
@@ -51,13 +51,15 @@ int main()
             }
         }
 
+        auto textures = imageImporter->getTextureIDs();
+
         while (window->isOpen())
         {
             window->update();
             imguiLayer->begin();
 
             ImGui::Begin("Image Gallery");
-            for (GLuint textureID : glImageImporter->getTextureIDs()) {
+            for (GLuint textureID : textures) {
                 ImGui::Image((void*)(intptr_t)textureID, ImVec2(200, 200));
                 ImGui::SameLine();
             }

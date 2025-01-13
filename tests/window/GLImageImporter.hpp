@@ -7,36 +7,27 @@
 #include "pch.hpp"
 #include "IImageImporter.hpp"
 
-STRUCT(GLContextInfo,
-    GLuint textureID;
-    std::thread::id threadID;
-    bool isActive;
-)
-
 DERIVED_CLASS(GLImageImporter, IImageImporter)
     FUNC_OVERRIDE(bool, loadImage, const std::string& path)
     FUNC_OVERRIDE(bool, saveImage, const std::string& path)
     FUNC_OVERRIDE(void*, getImageData)
     FUNC_OVERRIDE(bool, isLoaded)
     FUNC_OVERRIDE(void, release)
+    FUNC_OVERRIDE(void, clearTextures)
 
-    GLuint getTextureID() const override {
-        return m_TextureIDs.empty() ? 0 : m_TextureIDs.back(); // Return the last loaded texture ID
+    std::vector<unsigned int> getTextureIDs() const override {
+        std::lock_guard<std::mutex> lock(m_mutex);
+        return m_TextureIDs;
     }
 
-    READONLY_PROPERTY(ILuint, ImageID) 
-    READONLY_PROPERTY(uint32_t, Width)
-    READONLY_PROPERTY(uint32_t, Height)
-    READONLY_PROPERTY(uint32_t, Channels)
-    PROPERTY(std::vector<GLuint>, TextureIDs)
 protected:
-    GLuint m_TextureID;
-    std::mutex m_mutex;
-    std::unordered_map<std::thread::id, GLContextInfo> m_contextMap;
-    std::atomic<bool> m_isLoaded{ false };
-
-    FUNC(GLuint, getTextureForCurrentThread)
-    FUNC(void, cleanupInactiveContexts)
+    mutable std::mutex m_mutex;
+    std::vector<GLuint> m_TextureIDs;
+    std::atomic<bool> m_isLoaded{false};
+    ILuint m_ImageID{0};
+    
+    FUNC(bool, generateTexture, const unsigned char* data, int width, int height)
 END_CLASS
+
 
 #endif // !GLIMAGEIMPORTER_HPP
