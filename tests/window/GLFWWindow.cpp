@@ -1,6 +1,9 @@
 #include "GLFWWindow.hpp"
+#include "GLImageImporter.hpp"
 
-CTOR_IMPL_WITH_PARAMS(GLFWWindow, m_Window(nullptr))
+CTOR_IMPL_NO_PARAMS(GLFWWindow) 
+this->m_Window = nullptr;
+
 if (!glfwInit())
     exit(EXIT_FAILURE);
 
@@ -52,4 +55,29 @@ FUNC_END
 
 FUNC_IMPL_CONST(GLFWWindow, bool, isOpen)
 return m_Window != nullptr && !glfwWindowShouldClose(m_Window);
+FUNC_END
+
+FUNC_IMPL(GLFWWindow, void, setIcon, const char* iconPath)
+    ILuint imageID;
+    ilGenImages(1, &imageID);
+    ilBindImage(imageID);
+    
+    if (ilLoadImage(iconPath))
+    {
+        GLFWimage images[1];
+        images[0].width = ilGetInteger(IL_IMAGE_WIDTH);
+        images[0].height = ilGetInteger(IL_IMAGE_HEIGHT);
+        images[0].pixels = (unsigned char*)ilGetData();
+        
+        if (m_Window)
+        {
+            glfwSetWindowIcon(m_Window, 1, images);
+        }
+    }
+    else
+    {
+        std::cerr << "Failed to load icon: " << iconPath << std::endl;
+    }
+    
+    ilDeleteImages(1, &imageID);
 FUNC_END

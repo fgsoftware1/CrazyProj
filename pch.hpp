@@ -16,6 +16,7 @@
 #include <vector>
 #include <unordered_map>
 #include <mutex>
+#include <fstream>
 
 namespace fs = std::filesystem;
 
@@ -180,7 +181,7 @@ constexpr Ref<T> createRef(Args &&...args)
     ~name();
 
 #define CTOR_IMPL_WITH_PARAMS(klass, ...) \
-    klass::klass() : __VA_ARGS__ { \
+    klass::klass(__VA_ARGS__) { \
 
 #define CTOR_IMPL_NO_PARAMS(klass) \
     klass::klass() { \

@@ -1,6 +1,7 @@
 #include "GLFWWindow.hpp"
 #include "ImGuiLayer.hpp"
 #include "GLImageImporter.hpp"
+#include "Project.hpp"
 
 enum class WindowType
 {
@@ -13,7 +14,7 @@ int main()
 {
     WindowType windowType = WindowType::GLFW;
     IWindow *window = nullptr;
-	IImageImporter* imageImporter = nullptr;
+    IImageImporter *imageImporter = nullptr;
 
     switch (windowType)
     {
@@ -22,7 +23,7 @@ int main()
     //     break;
     case WindowType::GLFW:
         window = new GLFWWindow();
-		imageImporter = new GLImageImporter();
+        imageImporter = new GLImageImporter();
         break;
         // case WindowType::SDL:
         //     window = new SDLWindow();
@@ -30,23 +31,28 @@ int main()
     }
 
     GLFWWindow *glfwWindow = static_cast<GLFWWindow *>(window);
-    GLImageImporter *glImageImporter = static_cast<GLImageImporter*>(imageImporter);
+    GLImageImporter *glImageImporter = static_cast<GLImageImporter *>(imageImporter);
 
     if (window)
     {
         window->create("Test Window", 800, 600);
+        window->setIcon("fge.png");
         window->show();
 
         auto imguiLayer = MAKE_SCOPE(ImGuiLayer);
         imguiLayer->init(glfwWindow->getWindow());
 
-        std::vector<std::string> imagePaths = {
-            "awesomeface.png", 
-            "fge.png"
-        };
+        Project project("proj");
+        project.createBaseFoldersAndFiles();
 
-        for (const auto& path : imagePaths) {
-            if (!imageImporter->loadImage(path)) {
+        std::vector<std::string> imagePaths = {
+            "awesomeface.png",
+            "chai.png"};
+
+        for (const auto &path : imagePaths)
+        {
+            if (!imageImporter->loadImage(path))
+            {
                 std::cerr << "Failed to load image: " << path << std::endl;
             }
         }
@@ -59,8 +65,9 @@ int main()
             imguiLayer->begin();
 
             ImGui::Begin("Image Gallery");
-            for (GLuint textureID : textures) {
-                ImGui::Image((void*)(intptr_t)textureID, ImVec2(200, 200));
+            for (GLuint textureID : textures)
+            {
+                ImGui::Image((void *)(intptr_t)textureID, ImVec2(200, 200));
                 ImGui::SameLine();
             }
             ImGui::End();
@@ -71,7 +78,10 @@ int main()
         window->close();
     }
 
+    delete glfwWindow;
     delete window;
+    delete glImageImporter;
+    delete imageImporter;
 
     return 0;
 }

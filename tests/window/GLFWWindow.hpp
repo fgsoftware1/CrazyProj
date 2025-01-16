@@ -11,6 +11,7 @@ DERIVED_CLASS(GLFWWindow, IWindow)
     FUNC_OVERRIDE(void, show)
     FUNC_OVERRIDE(void, close)
     FUNC_OVERRIDE(void, update)
+    FUNC_OVERRIDE(void, setIcon, const char* iconPath)
     FUNC_CONST_OVERRIDE(bool, isOpen)
 
     READONLY_PROPERTY(GLFWwindow*, Window)

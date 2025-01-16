@@ -1,12 +1,12 @@
 #include "ImGuiLayer.hpp"
 
-CTOR_IMPL_WITH_PARAMS(ImGuiLayer, 
-    m_dockspaceOpen(true), 
-    m_opt_fullscreen(true), 
-    m_opt_padding(false), 
-    m_dockspace_flags(ImGuiDockNodeFlags_None), 
-    m_window_flags(ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking),
-    m_window(nullptr))
+CTOR_IMPL_NO_PARAMS(ImGuiLayer)
+    this->m_dockspaceOpen = true;
+    this->m_opt_fullscreen = true; 
+    this->m_opt_padding = false;
+    this->m_dockspace_flags = ImGuiDockNodeFlags_None;
+    this->m_window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
+    this->m_window = nullptr;
 CTOR_END
 
 DTOR_IMPL(ImGuiLayer)
@@ -30,9 +30,7 @@ FUNC_IMPL(ImGuiLayer, void, init, GLFWwindow* window)
 FUNC_END
 
 FUNC_IMPL(ImGuiLayer, void, shutdown)
-    if(gladLoadGLLoader)
-        ImGui_ImplOpenGL3_Shutdown();
-
+    ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 FUNC_END
