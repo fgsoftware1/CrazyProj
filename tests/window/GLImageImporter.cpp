@@ -16,15 +16,18 @@ FUNC_IMPL(GLImageImporter, bool, loadImage, const std::string& path)
     ilBindImage(imageID);
 
     if (!ilLoadImage(path.c_str())) {
+        ILenum error = ilGetError();
+        std::cerr << "Error loading file: " << iluErrorString(error) << std::endl;
         ilDeleteImages(1, &imageID);
         return false;
     }
 
     ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
     
-    int width = ilGetInteger(IL_IMAGE_WIDTH);
-    int height = ilGetInteger(IL_IMAGE_HEIGHT);
-    unsigned char* data = ilGetData();
+    ILint width = ilGetInteger(IL_IMAGE_WIDTH);
+    ILint height = ilGetInteger(IL_IMAGE_HEIGHT);
+    ILint format = ilGetInteger(IL_IMAGE_FORMAT);
+    ILubyte* data = ilGetData();
 
     bool success = generateTexture(data, width, height);
     

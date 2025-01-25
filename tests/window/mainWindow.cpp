@@ -46,8 +46,9 @@ int main()
         project.createBaseFoldersAndFiles();
 
         std::vector<std::string> imagePaths = {
-            "awesomeface.png",
-            "chai.png"};
+            "chai.png",
+            
+        };
 
         for (const auto &path : imagePaths)
         {
@@ -67,7 +68,7 @@ int main()
             ImGui::Begin("Image Gallery");
             for (GLuint textureID : textures)
             {
-                ImGui::Image((void *)(intptr_t)textureID, ImVec2(200, 200));
+                ImGui::Image((void *)(intptr_t)textureID, ImVec2(240, 240));
                 ImGui::SameLine();
             }
             ImGui::End();
@@ -79,9 +80,7 @@ int main()
     }
 
     delete glfwWindow;
-    delete window;
     delete glImageImporter;
-    delete imageImporter;
 
     return 0;
 }

@@ -3,6 +3,7 @@
 
 #include <glad/glad.h>
 #include <IL/il.h>
+#include <IL/ilu.h>
 
 #include "pch.hpp"
 #include "IImageImporter.hpp"

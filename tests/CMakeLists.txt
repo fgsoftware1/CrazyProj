@@ -19,4 +19,4 @@ target_precompile_headers(WindowTests REUSE_FROM Crazy)
 target_include_directories(WindowTests PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/window
 )
-target_link_libraries(WindowTests PRIVATE glad::glad glfw imgui::imgui ${IL_LIBRARIES})
+target_link_libraries(WindowTests PRIVATE glad::glad glfw imgui::imgui ${IL_LIBRARIES} ${ILU_LIBRARIES})
